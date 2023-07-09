@@ -1,0 +1,217 @@
+// Answer 1: ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Animal superclass
+class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound");
+    }
+}
+
+// Dog subclass
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The dog barks");
+    }
+}
+
+// Cat subclass
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The cat meows");
+    }
+}
+
+// Cow subclass
+class Cow extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The cow mooes");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        animal.makeSound();  // Output: The animal makes a sound
+
+        Dog dog = new Dog();
+        dog.makeSound();  // Output: The dog barks
+
+        Cat cat = new Cat();
+        cat.makeSound();  // Output: The cat meows
+
+        Cow cow = new Cow();
+        cow.makeSound();  // Output: The cow mooes
+    }
+}
+
+
+
+// Answer 2:------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Shape superclass
+abstract class Shape {
+    public abstract double calculateArea();
+}
+
+// Rectangle subclass
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+}
+
+// Circle subclass
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Triangle subclass
+class Triangle extends Shape {
+    private double base;
+    private double height;
+
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    public double calculateArea() {
+        return 0.5 * base * height;
+    }
+}
+
+// ShapeCalculator class
+class ShapeCalculator {
+    public void printArea(Shape shape) {
+        double area = shape.calculateArea();
+        System.out.println("The area of the shape is: " + area);
+    }
+}
+
+// Example usage
+public class Main {
+    public static void main(String[] args) {
+        ShapeCalculator calculator = new ShapeCalculator();
+
+        Rectangle rectangle = new Rectangle(5, 3);
+        calculator.printArea(rectangle);  // Output: The area of the shape is: 15.0
+
+        Circle circle = new Circle(2.5);
+        calculator.printArea(circle);  // Output: The area of the shape is: 19.634954084936208
+
+        Triangle triangle = new Triangle(4, 6);
+        calculator.printArea(triangle);  // Output: The area of the shape is: 12.0
+    }
+}
+
+
+ANSWER 3----------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+
+class Person {
+    private String name;
+    private int age;
+    private String address;
+
+    // Getter methods
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    // Setter methods
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an instance of the Person class
+        Person person = new Person();
+
+        // Set values for the properties using the setter methods
+        person.setName("John Doe");
+        person.setAge(30);
+        person.setAddress("123 Main Street");
+
+        // Display the values using the getter methods
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
+        System.out.println("Address: " + person.getAddress());
+    }
+}
+
+
+ANSWER 4--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Drawable interface
+interface Drawable {
+    void draw();
+}
+
+// Circle class implementing the Drawable interface
+class Circle implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+// Rectangle class implementing the Drawable interface
+class Rectangle implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Create objects of Circle and Rectangle
+        Circle circle = new Circle();
+        Rectangle rectangle = new Rectangle();
+
+        // Call the draw() method on each object
+        circle.draw(); // Output: Drawing a circle
+        rectangle.draw(); // Output: Drawing a rectangle
+    }
+}
+
+
